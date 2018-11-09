@@ -8,12 +8,20 @@ module
 
 class BaseModel():
     """ Parent of all other classes """
-
-    def __init__(self, created_at=None, updated_at=None, id=None):
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = self.created_at
-
+    def __init__(self, *args, **kwargs):
+        format = '%Y-%m-%dT%H:%M:%S.%f'
+        if kwargs:
+            if 'id' in kwargs.keys():
+                    self.id = kwargs['id']
+            if 'created_at' in kwargs.keys():
+                    self.created_at = datetime.strptime(kwargs['created_at'], format)
+            if 'updated_at' in kwargs.keys():
+                    self.updated_at = datetime.strptime(kwargs['updated_at'], format)
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = self.created_at
+ 
     def __str__(self):
         return ("[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__))
 
