@@ -11,8 +11,8 @@ class TestBaseClass(unittest.TestCase):
 
     """
     def test_id(self):
-        bm1 = BaseClass(None, None)
-        bm2 = BaseClass(None, None)
+        bm1 = BaseClass()
+        bm2 = BaseClass()
         self.assertIsInstance(bm1, BaseClass)
         self.assertTrue(hasattr(bm1, "id"))
         self.assertNotEqual(bm1.id, bm2.id)
@@ -20,6 +20,13 @@ class TestBaseClass(unittest.TestCase):
         self.assertIsInstance(bm2, BaseClass)
         self.assertTrue(hasattr(bm2, "id"))
         self.assertIsInstance(bm2.id, str)
+
+    def test_created_updated(self):
+        bm1 = BaseClass()
+        bm2 = BaseClass()
+        self.assertEqual("created_at", "updated_at")
+        print(self.created_at)
+        print(self.updated_at)
 
 if __name__ == '__main__':
     unittest.main()
