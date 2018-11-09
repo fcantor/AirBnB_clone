@@ -23,12 +23,15 @@ class BaseModel():
             self.updated_at = self.created_at
  
     def __str__(self):
+        """ Returns a formatted string of class attributes """
         return ("[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__))
 
     def save(self):
+        """ Updates updated_at value to current time """
         self.updated_at = datetime.now()
 
     def to_dict(self):
+        """ Creates a dictionary of class attributes """
         d = {}
         for k,v in self.__dict__.items():
             if v is not None:
