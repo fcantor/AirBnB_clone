@@ -9,7 +9,7 @@ class FileStorage(BaseModel):
     """
     FileStorage
     """
-    __file_path = "../../file.json"
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
@@ -20,8 +20,12 @@ class FileStorage(BaseModel):
         type(self).__objects[k] = obj
 
     def save(self):
-        with open(__file_path, mode='w') as f:
-            f.write(json.dumps(__objects))
+        save_dict = {}
+        for k,v in type(self).__objects.items():
+            v_dict = v.to_dict()
+            save_dict[k] = v_dict
+        with open(type(self).__file_path, mode='w') as f:
+            json.dump(save_dict, f)
 
     def reload(self):
         with open(__objects) as f:
