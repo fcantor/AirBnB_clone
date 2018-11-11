@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import cmd
 from datetime import datetime
+import models
 from uuid import uuid4
 """
 module
@@ -21,7 +22,8 @@ class BaseModel():
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
- 
+        models.storage.new(self)
+
     def __str__(self):
         """ Returns a formatted string of class attributes """
         return ("[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__))
@@ -29,6 +31,7 @@ class BaseModel():
     def save(self):
         """ Updates updated_at value to current time """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """ Creates a dictionary of class attributes """
