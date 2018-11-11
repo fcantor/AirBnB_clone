@@ -13,7 +13,7 @@ class FileStorage(BaseModel):
     __objects = {}
 
     def all(self):
-        return __objects
+        return type(self).__objects
 
     def new(self, obj):
         k = "{}.{}".format(obj.__class__.__name__, obj.id)
@@ -28,5 +28,8 @@ class FileStorage(BaseModel):
             json.dump(save_dict, f)
 
     def reload(self):
-        with open(__objects) as f:
-            return json.load(f)
+        try:
+            with open("file.json", "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            pass
