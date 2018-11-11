@@ -28,5 +28,8 @@ class FileStorage(BaseModel):
             json.dump(save_dict, f)
 
     def reload(self):
-        with open(type(self).__objects) as f:
-            return json.load(f)
+        try:
+            with open("file.json", "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            pass
