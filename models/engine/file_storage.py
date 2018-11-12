@@ -5,7 +5,7 @@ from models.base_model import BaseModel
 engine
 """
 
-class FileStorage(BaseModel):
+class FileStorage:
     """
     FileStorage
     """
