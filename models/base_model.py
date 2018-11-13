@@ -34,12 +34,8 @@ class BaseModel():
 
     def to_dict(self):
         """ Creates a dictionary of class attributes """
-        d = {}
-        for k,v in self.__dict__.items():
-            if v is not None:
-                d[k] = v
+        d = self.__dict__.copy()
         d['__class__'] = self.__class__.__name__
-
-        d['created_at'] = d['created_at'].isoformat()
-        d['updated_at'] = d['updated_at'].isoformat()
+        d['created_at'] = self.created_at.isoformat()
+        d['updated_at'] = self.updated_at.isoformat()
         return d
