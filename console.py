@@ -4,12 +4,11 @@ command interpreter
 """
 import cmd
 from models.base_model import BaseModel
-import models
+from models import classes, storage
 
 class HBNBCommand(cmd.Cmd):
     """ command-line interpreter class """
     prompt = '(hbnb) '
-    classes = {'BaseModel': BaseModel}
 
     def do_quit(self, arg):
         'Quit command to exit the program'
@@ -24,26 +23,28 @@ class HBNBCommand(cmd.Cmd):
         args = parse(arg)
         if not args:
             print("** class name missing **")
-        elif args[0] not in type(self).classes:
+        elif args[0] not in classes:
             print("** class doesn't exist **")
         else:
-            obj = type(self).classes[args[0]]()
-            obj.save
+            obj = classes[args[0]]()
+            obj.save()
             print(obj.id)
 
     def do_show(self, arg):
         args = parse(arg)
-        if not args:
+        if not args or len(args) == 0 or args[0] == "":
             print("** class name missing **")
-        elif args[0] not in type(self).classes:
+        elif args[0] not in classes:
             print("** class doesn't exist **")
-        elif len(args) < 2:
+        elif len(args) < 2 or args[1] == "":
             print("** instance id missing **")
         else:
-            objects = models.storage.all()
-            for k,v in objects.items():
+            key = args[0] + "." + args[1]
+            if key in storage.all():
+                print(key)
+                print(storage.all()[key])
 
-        print("** no instance found **")
+#        print("** no instance found **")
 
     def do_destroy(self, arg):
         pass
