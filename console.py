@@ -3,6 +3,7 @@
 command interpreter
 """
 import cmd
+from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from models import classes, storage
 
@@ -62,7 +63,14 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
 
     def do_all(self, arg):
-        pass
+        'Prints all <class> instances or all instances'
+        args = parse(arg)
+        if not args:
+            print()
+        elif args > 1:
+            print("** takes 1 or 0 arguments **")
+#        else:
+#            if args[0] in 
 
     def do_update(self, arg):
         pass
