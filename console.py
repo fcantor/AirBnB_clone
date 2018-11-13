@@ -3,9 +3,9 @@
 command interpreter
 """
 import cmd
-from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from models import classes, storage
+import models
 
 class HBNBCommand(cmd.Cmd):
     """ command-line interpreter class """
@@ -65,12 +65,23 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, arg):
         'Prints all <class> instances or all instances'
         args = parse(arg)
+        objects = storage.all()
         if not args:
-            print()
-        elif args > 1:
-            print("** takes 1 or 0 arguments **")
-#        else:
-#            if args[0] in 
+            v_list = []
+            print(objects)
+            for k,v in objects.items():
+                v_list.append(str(objects[k]))
+            print(v_list)
+        else:
+            v_list = []
+            for k,v in objects.items():
+                if v.__class__.__name__ == args[0]:
+                    v_list.append(str(objects[k]))
+            if v_list:
+                print(v_list)
+            else:
+                print("** class doesn't exist **")
+
 
     def do_update(self, arg):
         pass
