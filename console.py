@@ -31,6 +31,7 @@ class HBNBCommand(cmd.Cmd):
             print(obj.id)
 
     def do_show(self, arg):
+        'Shows attributes of <class> <id>'
         args = parse(arg)
         if not args or len(args) == 0 or args[0] == "":
             print("** class name missing **")
@@ -41,13 +42,24 @@ class HBNBCommand(cmd.Cmd):
         else:
             key = args[0] + "." + args[1]
             if key in storage.all():
-                print(key)
                 print(storage.all()[key])
-
-#        print("** no instance found **")
+            else:
+                print("** no instance found **")
 
     def do_destroy(self, arg):
-        pass
+        'Deletes instance of <class> <id>'
+        args = parse(arg)
+        if not args or len(args) == 0 or args[0] == "":
+            print("** class name missing **")
+        elif args[0] not in classes:
+            print("** class doesn't exist **")
+        elif len(args) < 2 or args[1] == "":
+            print("** instance id missing **")
+        else:
+            key = args[0] + "." + args[1]
+            if key in storage.all():
+                del storage.all()[key]
+                storage.save()
 
     def do_all(self, arg):
         pass
