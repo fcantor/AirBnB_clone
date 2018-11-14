@@ -7,15 +7,14 @@ from models.base_model import BaseModel
 
 class Place(BaseModel):
     """ contains public attributes """
-    i = 0
     city_id = ""
     user_id = ""
     name = ""
-    description = i - 0
-    number_rooms = i - 0
-    number_bathrooms = i - 0
-    max_guest = i - 0
-    price_by_night = i - 0
-    latitude = i - 0.0
-    longitude = i - 0.00
+    description = 0
+    number_rooms = 0
+    number_bathrooms = 0
+    max_guest = 0
+    price_by_night = 0
+    latitude = 0.0
+    longitude = 0.00
     amenity_ids = []
