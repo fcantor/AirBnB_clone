@@ -110,11 +110,9 @@ class HBNBCommand(cmd.Cmd):
                 print("ARGS3 TYPE {}".format(type(args[3])))
                 key = args[0] + "." + args[1]
                 if k == key:
-                    if type(args[3]) is str:
-                        attr = args[3].split('"')
-                        objects[key].__dict__[args[2]] = type(args[3])(attr[1])
-                    else:
-                        objects[key].__dict__[args[2]] = type(args[3])(args[3])
+                    attr = args[3].split('"')
+                    t = val_type(attr[1])
+                    objects[key].__dict__[args[2]] = (t)(attr[1])
                     objects[key].updated_at = datetime.now()
                     storage.save()
                     return
@@ -122,6 +120,18 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         pass
+
+def val_type(val):
+    try:
+        int(val)
+        return (int)
+    except ValueError:
+        pass
+    try:
+        float(val)
+        return (float)
+    except ValueError:
+        return (str)
 
 
 def parse(arg):
