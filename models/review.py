@@ -4,6 +4,7 @@ Contains Review Class
 """
 from models.base_model import BaseModel
 
+
 class Review(BaseModel):
     """ review class has public attributes """
     place_id = ""
