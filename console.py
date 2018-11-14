@@ -3,6 +3,7 @@
 command interpreter
 """
 import cmd
+from datetime import datetime
 from models.base_model import BaseModel
 from models import classes, storage
 from models.user import User
@@ -12,7 +13,7 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 import models
-
+import shlex
 
 class HBNBCommand(cmd.Cmd):
     """ command-line interpreter class """
@@ -93,6 +94,7 @@ class HBNBCommand(cmd.Cmd):
         'Updates class attribute.\nSyntax: update <class name> <id>\
  <attribute name> "<attribute value>"'
         args = parse(arg)
+        objects = storage.all()
         if not args or args is None:
             print("** class name missing **")
         elif args[0] not in classes:
@@ -104,13 +106,19 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) < 4 or args[3] == "":
             print("** value missing **")
         else:
-            objects = storage.all()
             for k,v in objects.items():
-                if v.__class__.__name__ == args[0] and v.id == args[1]:
-                    # casting
-                    # assigning values
-                else:
-                    print("** no instance found **")
+                print("ARGS3 TYPE {}".format(type(args[3])))
+                key = args[0] + "." + args[1]
+                if k == key:
+                    if type(args[3]) is str:
+                        attr = args[3].split('"')
+                        objects[key].__dict__[args[2]] = type(args[3])(attr[1])
+                    else:
+                        objects[key].__dict__[args[2]] = type(args[3])(args[3])
+                    objects[key].updated_at = datetime.now()
+                    storage.save()
+                    return
+            print("** no instance found **")
 
     def emptyline(self):
         pass
