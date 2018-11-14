@@ -5,6 +5,7 @@ from models.base_model import BaseModel
 Unittesting for base_model
 """
 
+
 class TestBaseModel(unittest.TestCase):
     """
     instance id's should not be equal to one another
