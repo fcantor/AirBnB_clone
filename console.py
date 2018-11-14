@@ -68,10 +68,10 @@ class HBNBCommand(cmd.Cmd):
         objects = storage.all()
         if not args:
             v_list = []
-            print(objects)
             for k,v in objects.items():
                 v_list.append(str(objects[k]))
-            print(v_list)
+            if v_list:
+                print(v_list)
         else:
             v_list = []
             for k,v in objects.items():
@@ -82,9 +82,29 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** class doesn't exist **")
 
-
     def do_update(self, arg):
-        pass
+        'Updates class attribute.\nSyntax: update <class name> <id>\
+ <attribute name> "<attribute value>"'
+        args = parse(arg)
+        if not args or args is None:
+            print("** class name missing **")
+        elif args[0] not in classes:
+            print("** class doesn't exist **")
+        elif len(args) < 2 or args[1] == "":
+            print("** instance id missing **")
+        elif len(args) < 3 or args[2] == "":
+            print("** attribute name missing **")
+        elif len(args) < 4 or args[3] == "":
+            print("** value missing **")
+        else:
+            objects = storage.all()
+            for k,v in objects.items():
+                if v.__class__.__name__ == args[0] and v.id == args[1]:
+                    # casting
+                    # assigning values
+                else:
+                    print("** no instance found **")
+
 
     def emptyline(self):
         pass
