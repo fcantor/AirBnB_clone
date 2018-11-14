@@ -5,6 +5,7 @@ import models
 Contains the FileStorage Class
 """
 
+
 class FileStorage:
     """
     FileStorage
@@ -21,7 +22,7 @@ class FileStorage:
 
     def save(self):
         save_dict = {}
-        for k,v in type(self).__objects.items():
+        for k, v in type(self).__objects.items():
             save_dict[k] = v.to_dict()
         with open(type(self).__file_path, mode='w', encoding='utf-8') as f:
             json.dump(save_dict, f)
@@ -30,7 +31,7 @@ class FileStorage:
         try:
             with open("file.json", "r", encoding="utf-8") as f:
                 obj = json.load(f)
-                for k,v in obj.items():
+                for k, v in obj.items():
                     val = models.classes[v["__class__"]](**v)
                     type(self).__objects[k] = val
         except FileNotFoundError:
