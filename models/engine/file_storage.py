@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 import json
-from models.base_model import BaseModel
+import models
 """
-engine
+Contains the FileStorage Class
 """
 
 class FileStorage:
     """
     FileStorage
     """
-    __classes = {'BaseModel': BaseModel}
     __file_path = "file.json"
     __objects = {}
 
@@ -32,7 +31,7 @@ class FileStorage:
             with open("file.json", "r", encoding="utf-8") as f:
                 obj = json.load(f)
                 for k,v in obj.items():
-                    val = type(self).__classes[v["__class__"]](**v)
+                    val = models.classes[v["__class__"]](**v)
                     type(self).__objects[k] = val
         except FileNotFoundError:
             pass
