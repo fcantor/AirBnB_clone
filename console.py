@@ -91,8 +91,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
 
     def do_update(self, arg):
-        'Updates class attribute.\nSyntax: update <class name> <id>\
- <attribute name> "<attribute value>"'
+        'Updates class attribute.'
         args = parse(arg)
         objects = storage.all()
         if not args or args is None:
@@ -107,7 +106,6 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
         else:
             for k, v in objects.items():
-                print("ARGS3 TYPE {}".format(type(args[3])))
                 key = args[0] + "." + args[1]
                 if k == key:
                     attr = args[3].split('"')
@@ -117,6 +115,7 @@ class HBNBCommand(cmd.Cmd):
                     storage.save()
                     return
             print("** no instance found **")
+
 
     def emptyline(self):
         pass
