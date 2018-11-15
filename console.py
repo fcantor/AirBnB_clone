@@ -124,14 +124,24 @@ class HBNBCommand(cmd.Cmd):
     def default(self, arg):
         """ Deals with <class name>.<command>() """
         methods = {'all()': "do_all",
+                   'count()': "count",
                    'create()': "do_create"}
         tokens = arg.split('.', 1)
         if tokens[0] not in classes:
             print("** class doesn't exist **")
         elif tokens[1] not in methods:
-            print("** command doesn't exist ***")
+            print("** command doesn't exist **")
         else:
             eval('self.{}("{}")'.format(methods[tokens[1]], tokens[0]))
+
+    def count(self, arg):
+        count = 0
+        objects = storage.all()
+        for k, v in objects.items():
+            tmp = k.split('.', 1)
+            if tmp[0] == arg:
+                count += 1
+        print(count)
 
 def val_type(val):
     try:
