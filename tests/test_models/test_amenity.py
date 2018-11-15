@@ -6,6 +6,7 @@ from models.base_model import BaseModel
 import os
 import pep8
 
+
 class TestAmenity(unittest.TestCase):
     """ Tests different attributes and functionality of Amenity class """
 

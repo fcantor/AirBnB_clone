@@ -6,8 +6,9 @@ from models.base_model import BaseModel
 import os
 import pep8
 
-class TestAmenity(unittest.TestCase):
-    """ Tests different attributes and functionality of Amenity class """
+
+class TestPlace(unittest.TestCase):
+    """ Tests different attributes and functionality of Place class """
 
     @classmethod
     def setup_class(cls):

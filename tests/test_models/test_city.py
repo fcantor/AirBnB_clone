@@ -7,6 +7,7 @@ import os
 import pep8
 import unittest
 
+
 class TestCity(unittest.TestCase):
     """ Tests different attributes and functionality of City class """
 
