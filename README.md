@@ -85,4 +85,4 @@ $
 ### Authors
 *Diego Murray* - [Github](https://github.com/dmurr) || [Twitter](https://twitter.com/diegocmurray)
 
-*Franchesca Cantor* - [Github](https://github.com/cheska/) || [Twitter](https://twitter.com/servomecatnism)
+*Francesca Cantor* - [Github](https://github.com/cheska/) || [Twitter](https://twitter.com/servomecatnism)
