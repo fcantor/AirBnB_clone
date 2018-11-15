@@ -7,7 +7,7 @@ The Console is a specific-use case command interpreter. It allows for the creati
 
 ## Files in this Repository
 
-|   ***File***    |     ** File **     |     **Decription**     |
+|   ***File***    |     **File Location**     |     **Decription**     |
 |---------------|-------------------------|-----------------------|
 |  `console.py` | [console.py](console.py) | Enters the console |
 |  `amenity.py` | [models/amenity.py](models/amenity.py) | Amenity subclass |
@@ -15,7 +15,7 @@ The Console is a specific-use case command interpreter. It allows for the creati
 |  `review.py` |  [models/review.py](models/review.py)	| Review subclass |
 |  `user.py`  | [models/user.py](models/usr.py) | User subclass |
 |  `state.py` | [models/state.py](models/state.py) | State subclass |
-|  `place.py` | [models/place.py(models/place.py)] | Place subclass |
+|  `place.py` | [models/place.py](models/place.py)] | Place subclass |
 |  `base_model.py'       | [models/base_model.py](models/base_model.py)  | The base model superclass |
 |  `__init__py`          | [models/__init__.py](models/__init__.py) | Package init |
 |  `file_storage.py`     | [models/file_storage.py](models/file_storage.py)  | Storage class |
@@ -45,7 +45,7 @@ EOF  help  quit
 $
 ```
 **non-interactive mode**
-'''
+```
 $ echo "help" | ./console.py
 (hbnb)
 
