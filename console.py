@@ -121,6 +121,17 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         pass
 
+    def default(self, arg):
+        """ Deals with <class name>.<command>() """
+        methods = {'all()': "do_all",
+                   'create()': "do_create"}
+        tokens = arg.split('.', 1)
+        if tokens[0] not in classes:
+            print("** class doesn't exist **")
+        elif tokens[1] not in methods:
+            print("** command doesn't exist ***")
+        else:
+            eval('self.{}("{}")'.format(methods[tokens[1]], tokens[0]))
 
 def val_type(val):
     try:
