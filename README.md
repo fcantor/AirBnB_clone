@@ -29,7 +29,7 @@ The Console is a specific-use case command interpreter. It allows for the creati
 | `test_user.py`         | [tests/test_models/test_user.py](tests/test_models/test_user.py)  | Unittest module for user  |
 | `test_file_storage.py` | [tests/test_models/test_engine/test_file_storage.py](tests/test_models/test_engine/test_file_storage.py) | Unittest module for file storage |
 
-### How to start it
+# How to use it
 **interactive mode**
 ```
 $ ./console.py
@@ -67,11 +67,19 @@ EOF  help  quit
 $
 ```
 
-### How to use it
+# Examples
+```
+(hbnb) create BaseModel
+3db5387d-2fd6-494e-9b95-e5a62790c1fd
+(hbnb) show BaseModel 2013187e-1bc9-4f8f-b0ae-8088e6a2ee43
+[BaseModel] (3db5387d-2fd6-494e-9b95-e5a62790c1fd) {'created_at': datetime.datetime(2018, 11, 15, 3, 3, 56, 358245), 'updated_at': datetime.datetime(2018, 11, 15, 3, 3, 56, 358274), 'id': '3db5387d-2fd6-494e-9b95-e5a62790c1fd'}
+(hbnb) update BaseModel 3db5387d-2fd6-494e-9b95-e5a62790c1fd name "Ricardo"
+(hbnb) show BaseModel 3db5387d-2fd6-494e-9b95-e5a62790c1fd
+[BaseModel] (3db5387d-2fd6-494e-9b95-e5a62790c1fd) {'created_at': datetime.datetime(2018, 11, 15, 3, 3, 56\
+, 358245), 'updated_at': datetime.datetime(2018, 11, 15, 3, 3, 56, 358274), 'id': '3db5387d-2fd6-494e-9b95\
+-e5a62790c1fd'}
 
-### examples
-
-
+```
 ### Authors
 *Diego Murray* - [Github](https://github.com/dmurr) || [Twitter](https://twitter.com/diegocmurray)
 
