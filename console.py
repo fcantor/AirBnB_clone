@@ -107,7 +107,6 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
         else:
             for k, v in objects.items():
-                print("ARGS3 TYPE {}".format(type(args[3])))
                 key = args[0] + "." + args[1]
                 if k == key:
                     attr = args[3].split('"')
