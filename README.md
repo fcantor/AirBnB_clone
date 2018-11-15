@@ -15,8 +15,8 @@ The Console is a specific-use case command interpreter. It allows for the creati
 |  `review.py` |  [models/review.py](models/review.py)	| Review subclass |
 |  `user.py`  | [models/user.py](models/usr.py) | User subclass |
 |  `state.py` | [models/state.py](models/state.py) | State subclass |
-|  `place.py` | [models/place.py](models/place.py)] | Place subclass |
-|  `base_model.py'       | [models/base_model.py](models/base_model.py)  | The base model superclass |
+|  `place.py` | [models/place.py](models/place.py) | Place subclass |
+|  `base_model.py`       | [models/base_model.py](models/base_model.py)  | The base model superclass |
 |  `__init__py`          | [models/__init__.py](models/__init__.py) | Package init |
 |  `file_storage.py`     | [models/file_storage.py](models/file_storage.py)  | Storage class |
 |  `test_base_model.py`  | [tests/test_models/test_base_model.py](tests/test_models/test_base_model.py)  | Unittest module for base model |
@@ -85,4 +85,4 @@ $
 ### Authors
 *Diego Murray* - [Github](https://github.com/dmurr) || [Twitter](https://twitter.com/diegocmurray)
 
-*Franchesca Cantor* - [Github](https://github.com/cheska/) || [Twitter](https://twitter.com/servomecatnism)
+*Francesca Cantor* - [Github](https://github.com/cheska/) || [Twitter](https://twitter.com/servomecatnism)
