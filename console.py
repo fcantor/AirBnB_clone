@@ -118,7 +118,6 @@ class HBNBCommand(cmd.Cmd):
                     return
             print("** no instance found **")
 
-
     def emptyline(self):
         pass
 
