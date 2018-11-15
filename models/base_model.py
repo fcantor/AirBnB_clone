@@ -10,6 +10,7 @@ module
 class BaseModel():
     """ Parent of all other classes """
     def __init__(self, *args, **kwargs):
+        """ Creates attributes """
         format = '%Y-%m-%dT%H:%M:%S.%f'
         if kwargs:
             for k, v in kwargs.items():
