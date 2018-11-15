@@ -76,13 +76,13 @@ class HBNBCommand(cmd.Cmd):
         objects = storage.all()
         if not args:
             v_list = []
-            for k,v in objects.items():
+            for k, v in objects.items():
                 v_list.append(str(objects[k]))
             if v_list:
                 print(v_list)
         else:
             v_list = []
-            for k,v in objects.items():
+            for k, v in objects.items():
                 if v.__class__.__name__ == args[0]:
                     v_list.append(str(objects[k]))
             if v_list:
@@ -106,7 +106,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) < 4 or args[3] == "":
             print("** value missing **")
         else:
-            for k,v in objects.items():
+            for k, v in objects.items():
                 print("ARGS3 TYPE {}".format(type(args[3])))
                 key = args[0] + "." + args[1]
                 if k == key:
@@ -120,6 +120,7 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         pass
+
 
 def val_type(val):
     try:
