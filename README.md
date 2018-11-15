@@ -8,7 +8,7 @@ The Console is a specific-use case command interpreter. It allows for the creati
 ## Files in this Repository
 
 |   ***File***    |     ** File **     |     **Decription**     |
-|---------------|------------------------------------------------|
+|---------------|-------------------------|-----------------------|
 |  `console.py` | [console.py](console.py) | Enters the console |
 |  `amenity.py` | [models/amenity.py](models/amenity.py) | Amenity subclass |
 |  `city.py` | [models/city.py](models/city.py)  | City Subclass |
@@ -19,19 +19,19 @@ The Console is a specific-use case command interpreter. It allows for the creati
 |  `base_model.py'       | [models/base_model.py](models/base_model.py)  | The base model superclass |
 |  `__init__py`          | [models/__init__.py](models/__init__.py) | Package init |
 |  `file_storage.py`     | [models/file_storage.py](models/file_storage.py)  | Storage class |
-|  `test_base_model.py`  | [tests/test_models/test_base_model.py](tests/test_models/test_base_model.py)  | Unittest for base model |
-| `test_console.py`      | [tests/test_console.py](tests/test_console.py)    | The unittest module for console  |
-| `test_amenity.py`      | [tests/test_models/test_amenity.py](tests/test_models/test_amenity.py)  | The unittest module for amenity      |
-| `test_city.py`         | [tests/test_models/test_city.py](tests/test_models/test_city.py)  | The unittest module for city         |
-| `test_place.py`        | [tests/test_models/test_place.py](tests/test_models/test_place.py)   | The unittest module for place        |
-| `test_review.py`       | [tests/test_models/test_review.py](tests/test_models/test_review.py)   | The unittest module for review       |
-| `test_state.py`        | [tests/test_models/test_state.py](tests/test_models/test_state.py)  | The unittest module for state        |
-| `test_user.py`         | [tests/test_models/test_user.py](tests/test_models/test_user.py)  | The unittest module for user  |
-| `test_file_storage.py` | [tests/test_models/test_engine/test_file_storage.py](tests/test_models/test_engine/test_file_storage.py) | The unittest module for file storage |
+|  `test_base_model.py`  | [tests/test_models/test_base_model.py](tests/test_models/test_base_model.py)  | Unittest module for base model |
+| `test_console.py`      | [tests/test_console.py](tests/test_console.py)    | Unittest module for console  |
+| `test_amenity.py`      | [tests/test_models/test_amenity.py](tests/test_models/test_amenity.py)  | Unittest module for amenity      |
+| `test_city.py`         | [tests/test_models/test_city.py](tests/test_models/test_city.py)  | Unittest module for city         |
+| `test_place.py`        | [tests/test_models/test_place.py](tests/test_models/test_place.py)   | Unittest module for place        |
+| `test_review.py`       | [tests/test_models/test_review.py](tests/test_models/test_review.py)   | Unittest module for review       |
+| `test_state.py`        | [tests/test_models/test_state.py](tests/test_models/test_state.py)  | Unittest module for state        |
+| `test_user.py`         | [tests/test_models/test_user.py](tests/test_models/test_user.py)  | Unittest module for user  |
+| `test_file_storage.py` | [tests/test_models/test_engine/test_file_storage.py](tests/test_models/test_engine/test_file_storage.py) | Unittest module for file storage |
 
 ### How to start it
 **interactive mode**
-'''
+```
 $ ./console.py
 (hbnb) help
 
@@ -43,7 +43,7 @@ EOF  help  quit
 (hbnb)
 (hbnb) quit
 $
-'''
+```
 **non-interactive mode**
 '''
 $ echo "help" | ./console.py
@@ -65,7 +65,7 @@ Documented commands (type help <topic>):
 EOF  help  quit
 (hbnb)
 $
-'''
+```
 
 ### How to use it
 
@@ -75,4 +75,4 @@ $
 ### Authors
 *Diego Murray* - [Github](https://github.com/dmurr) || [Twitter](https://twitter.com/diegocmurray)
 
-*Franchesca Cantor* - [Github](https://github.com/cheska/) || [Twitter](https://twitter.com/cheska)
+*Franchesca Cantor* - [Github](https://github.com/cheska/) || [Twitter](https://twitter.com/servomecatnism)
