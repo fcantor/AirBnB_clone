@@ -18,7 +18,6 @@ class BaseModel():
                     v = datetime.strptime(v, format)
                 if k != '__class__':
                     setattr(self, k, v)
-
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
