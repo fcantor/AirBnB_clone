@@ -24,35 +24,29 @@ class TestConsole(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        """
-        setup for the test
-        """
+        """ Creates an instance """
         cls.cnsl = HBNBCommand()
 
     @classmethod
     def teardown(cls):
-        """
-        at the end of the test this will tear it down
-        """
+        """ Deletes the instance """
         del cls.cnsl
 
     def tearDown(self):
-        """
-        Remove temporary file (file.json) created as a result
-        """
+        """ Removes the JSON file """
         try:
             os.remove("file.json")
         except:
             pass
 
     def test_pep8_console(self):
-        """Pep8 console.py"""
+        """ Tests this script for PEP8 styling """
         style = pep8.StyleGuide(quiet=True)
         p = style.check_files(["console.py"])
         self.assertEqual(p.total_errors, 0, 'PEP8 Failed')
 
     def test_docstrings(self):
-        """checking for docstrings"""
+        """ Checks methods for docstrings """
         self.assertIsNotNone(console.__doc__)
         self.assertIsNotNone(HBNBCommand.do_quit.__doc__)
         self.assertIsNotNone(HBNBCommand.do_EOF.__doc__)
@@ -64,13 +58,13 @@ class TestConsole(unittest.TestCase):
         self.assertIsNotNone(HBNBCommand.default.__doc__)
 
     def test_empty(self):
-        """Test empty line input"""
+        """ Tests the emptyline method """
         with patch('sys.stdout', new=StringIO()) as f:
             self.cnsl.onecmd("\n")
             self.assertEqual('', f.getvalue())
 
     def test_quit(self):
-        """test quit command input"""
+        """ Tests the quit method """
         with patch('sys.stdout', new=StringIO()) as f:
             with self.assertRaises(SystemExit):
                 self.cnsl.onecmd("quit")
