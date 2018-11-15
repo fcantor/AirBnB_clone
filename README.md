@@ -1,1 +1,78 @@
-# AirBnB_clone
+# AirBnB Clone
+### Description - AirBnB Clone
+The AirBnB Clone project is Holberton School project that allows us to implement new development skills as we learn them. This web application will be built upon piece-by-piece over the coming months until it looks and functions as a Airbnb would.
+
+### Description - The Console
+The Console is a specific-use case command interpreter. It allows for the creation  of new objects (ex. User, Place), retrieval of objects from a file/database, operations on objects, updating objects, and destroying them. 
+
+## Files in this Repository
+
+|   ***File***    |     ** File **     |     **Decription**     |
+|---------------|------------------------------------------------|
+|  `console.py` | [console.py](console.py) | Enters the console |
+|  `amenity.py` | [models/amenity.py](models/amenity.py) | Amenity subclass |
+|  `city.py` | [models/city.py](models/city.py)  | City Subclass |
+|  `review.py` |  [models/review.py](models/review.py)	| Review subclass |
+|  `user.py`  | [models/user.py](models/usr.py) | User subclass |
+|  `state.py` | [models/state.py](models/state.py) | State subclass |
+|  `place.py` | [models/place.py(models/place.py)] | Place subclass |
+|  `base_model.py'       | [models/base_model.py](models/base_model.py)  | The base model superclass |
+|  `__init__py`          | [models/__init__.py](models/__init__.py) | Package init |
+|  `file_storage.py`     | [models/file_storage.py](models/file_storage.py)  | Storage class |
+|  `test_base_model.py`  | [tests/test_models/test_base_model.py](tests/test_models/test_base_model.py)  | Unittest for base model |
+| `test_console.py`      | [tests/test_console.py](tests/test_console.py)    | The unittest module for console  |
+| `test_amenity.py`      | [tests/test_models/test_amenity.py](tests/test_models/test_amenity.py)  | The unittest module for amenity      |
+| `test_city.py`         | [tests/test_models/test_city.py](tests/test_models/test_city.py)  | The unittest module for city         |
+| `test_place.py`        | [tests/test_models/test_place.py](tests/test_models/test_place.py)   | The unittest module for place        |
+| `test_review.py`       | [tests/test_models/test_review.py](tests/test_models/test_review.py)   | The unittest module for review       |
+| `test_state.py`        | [tests/test_models/test_state.py](tests/test_models/test_state.py)  | The unittest module for state        |
+| `test_user.py`         | [tests/test_models/test_user.py](tests/test_models/test_user.py)  | The unittest module for user  |
+| `test_file_storage.py` | [tests/test_models/test_engine/test_file_storage.py](tests/test_models/test_engine/test_file_storage.py) | The unittest module for file storage |
+
+### How to start it
+**interactive mode**
+'''
+$ ./console.py
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb)
+(hbnb)
+(hbnb) quit
+$
+'''
+**non-interactive mode**
+'''
+$ echo "help" | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb)
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb)
+$
+'''
+
+### How to use it
+
+### examples
+
+
+### Authors
+*Diego Murray* - [Github](https://github.com/dmurr) || [Twitter](https://twitter.com/diegocmurray)
+
+*Franchesca Cantor* - [Github](https://github.com/cheska/) || [Twitter](https://twitter.com/cheska)
