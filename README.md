@@ -1,9 +1,9 @@
 # AirBnB Clone
 ### Description - AirBnB Clone
-The AirBnB Clone project is Holberton School project that allows us to implement new development skills as we learn them. This web application will be built upon piece-by-piece over the coming months until it looks and functions as a Airbnb would.
+The AirBnB Clone project is a Holberton School project that allows us to implement new development skills as we learn them. This web application will be built upon piece-by-piece over the coming months until it looks and functions as the Airbnb website would.
 
 ### Description - The Console
-The Console is a specific-use case command interpreter. It allows for the creation  of new objects (ex. User, Place), retrieval of objects from a file/database, operations on objects, updating objects, and destroying them. 
+The Console is a specific-use case command interpreter. It allows for the creation of new objects (ex. User, Place), retrieval of objects from a file/database, operations on objects, updating objects, and destroying them. 
 
 ## Files in this Repository
 
@@ -85,4 +85,4 @@ $
 ### Authors
 *Diego Murray* - [Github](https://github.com/dmurr) || [Twitter](https://twitter.com/diegocmurray)
 
-*Francesca Cantor* - [Github](https://github.com/cheska/) || [Twitter](https://twitter.com/servomecatnism)
+*Francesca Cantor* - [Github](https://github.com/fcantor/) || [Twitter](https://twitter.com/servomecatnism)
