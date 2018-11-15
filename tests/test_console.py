@@ -25,12 +25,12 @@ class TestConsole(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """ Creates an instance """
-        cls.cnsl = HBNBCommand()
+        cls.console = HBNBCommand()
 
     @classmethod
     def teardown(cls):
         """ Deletes the instance """
-        del cls.cnsl
+        del cls.console
 
     def tearDown(self):
         """ Removes the JSON file """
@@ -60,12 +60,12 @@ class TestConsole(unittest.TestCase):
     def test_empty(self):
         """ Tests the emptyline method """
         with patch('sys.stdout', new=StringIO()) as f:
-            self.cnsl.onecmd("\n")
+            self.console.onecmd("\n")
             self.assertEqual('', f.getvalue())
 
     def test_quit(self):
         """ Tests the quit method """
         with patch('sys.stdout', new=StringIO()) as f:
             with self.assertRaises(SystemExit):
-                self.cnsl.onecmd("quit")
+                self.console.onecmd("quit")
             self.assertEqual('', f.getvalue())
