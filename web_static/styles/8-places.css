@@ -17,6 +17,7 @@
     display: inline-block;
     vertical-align: top;
     z-index: 1;
+    min-height: 350px;
 }
 
 .places article h2 {
