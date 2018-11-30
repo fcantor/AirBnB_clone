@@ -71,11 +71,9 @@ ul {
   padding-bottom: 5%;
 }
 
-.locations:hover .popover{
-  display: block;
-}
-
-.amenities:hover .popover{
+.locations:hover .popover,
+.amenities:hover .popover {
+  z-index: 1;
   display: block;
 }
 
