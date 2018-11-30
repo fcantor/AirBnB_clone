@@ -19,7 +19,7 @@ The files inside this directory are what comprises the AirBnB static website, in
 |  7. Display results      | Write an HTML page that displays a header, footer, a filters box with dropdown and results. |
 |  8. More details          | Write an HTML page that displays a header, a footer, a filter box (dropdown list) and the result of the search. |
 
-# Requirements:
+## Requirements:
 - You must use: header, footer, section, article, button, h1, h2, h3, h4, ul, li tags
 - No inline style
 - You are not allowed to use the img tag
