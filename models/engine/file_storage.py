@@ -31,7 +31,7 @@ class FileStorage:
             json.dump(save_dict, f)
 
     def reload(self):
-        """ Deserialized json into pythonn objects if file is found """
+        """ Deserialized json into python objects if file is found """
         try:
             with open("file.json", "r", encoding="utf-8") as f:
                 obj = json.load(f)
